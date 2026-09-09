@@ -1,0 +1,14 @@
+.detail-topics{display:flex;gap:12px;flex-wrap:wrap;padding-bottom:32px}
+.detail-topics a{border:1px solid var(--line);padding:12px 18px;border-radius:24px;font-size:13px}
+.detail-page section[id],.detail-page [id="ways-to-work"]{scroll-margin-top:100px}
+.detail-page .ways-to-work{padding-top:24px}
+.detail-page .ways-to-work .routes{margin-top:10px}
+.detail-page .section-head{margin-bottom:34px}
+.detail-page .programs-grid,.detail-page .care-grid{align-items:start}
+.detail-page #client-experience-archive{border-top:1px solid var(--line)}
+.detail-page #reading{border-top:1px solid var(--line)}
+@media(max-width:760px){
+  .detail-topics{flex-wrap:nowrap;overflow-x:auto;padding-bottom:12px;scrollbar-width:none}
+  .detail-topics a{white-space:nowrap;flex:none}
+  .detail-page .section-head{margin-bottom:24px}
+}
