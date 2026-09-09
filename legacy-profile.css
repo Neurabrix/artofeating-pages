@@ -1,0 +1,18 @@
+/* Full profile and service reading stays within the page's existing sections. */
+.legacy-profile{margin-top:20px;border:1px solid var(--line);border-radius:var(--radius);background:var(--white);overflow:hidden}
+.legacy-profile>summary{padding:20px 24px;cursor:pointer;font-weight:700;font-size:15px;line-height:1.5}
+.legacy-profile>summary::marker{color:var(--ink)}
+.legacy-profile[open]>summary{border-bottom:1px solid var(--line);background:var(--green)}
+.legacy-profile-body{padding:24px;max-width:940px;overflow-wrap:anywhere}
+.legacy-profile-body h4{margin:28px 0 14px;font-size:19px;line-height:1.5;letter-spacing:0}
+.legacy-profile-body p,.legacy-profile-body li{font-size:14px;line-height:1.8}
+.legacy-profile-body ul{margin:0 0 9px}
+.legacy-profile-body .legacy-context{padding:14px 18px;background:var(--paper);border-left:3px solid var(--gold);font-size:13px}
+.legacy-profile-images{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,180px),1fr));gap:18px;margin-top:26px;align-items:start}
+.legacy-profile-images figure{margin:0}
+.legacy-profile-images img{width:100%;max-height:300px;object-fit:contain;border-radius:12px;background:var(--paper)}
+.legacy-profile-images figcaption{font-size:12px;font-weight:700;line-height:1.5;margin-top:10px}
+.legacy-profile-body .legacy-source{font-size:12px;margin:24px 0 0}
+.legacy-profile:target{outline:2px solid var(--gold);outline-offset:3px}
+@media(max-width:600px){.legacy-profile>summary{padding:18px}.legacy-profile-body{padding:18px}}
+.legacy-profile-group{margin-top:32px}.legacy-profile-group .legacy-profile:first-child{margin-top:0}.legacy-profile:target{scroll-margin-top:100px}
