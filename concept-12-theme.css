@@ -802,3 +802,6 @@ main h4{line-height:1.3;letter-spacing:-.015em}
   text-transform:none;
   letter-spacing:.02em;
 }
+
+/* Keep the header consultation label and arrow on one line. */
+.header .button{flex-shrink:0;white-space:nowrap}
