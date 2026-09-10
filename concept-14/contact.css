@@ -1,0 +1,26 @@
+/* Contact controls stay independent of the shared visual theme. */
+.header .header-socials { gap: 6px; }
+.header .header-socials a { width: 44px; height: 44px; }
+.header .header-socials svg { width: 22px; height: 22px; }
+.header-socials .contact-phone { color: #185cba; }
+.header-socials .contact-whatsapp { color: #087b39; background: #effbf2; }
+.header-socials .contact-email { color: #b34417; }
+.header .header-socials a:focus-visible { outline: 3px solid #173a30; outline-offset: 3px; }
+.header .header-socials a:hover { border-color: currentColor; }
+.contact-error { display: block; color: #a12520; font-size: 14px; font-weight: 600; }
+.contact-error:empty { display: none; }
+.enquiry input[aria-invalid="true"] { border-color: #a12520; }
+/* Six comfortably sized actions need their own row before navigation collapses. */
+@media (max-width: 1400px) {
+  .header .header-inner { flex-wrap: wrap; gap: 8px 16px; padding-block: 10px; }
+  .header .header-socials { order: 5; flex-basis: 100%; justify-content: center; margin: 0; }
+}
+@media (max-width: 960px) {
+  .header .header-inner { justify-content: space-between; }
+  .header .brand { order: 1; }
+  .header .menu { display: block; order: 2; margin-left: auto; min-height: 44px; }
+  .header #navigation { display: none; top: 100%; }
+  .header #navigation.open { display: flex; }
+  .no-js .header #navigation { display: flex; position: static; order: 6; }
+  .no-js .header .menu { display: none; }
+}

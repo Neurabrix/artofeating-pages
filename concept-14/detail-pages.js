@@ -55,6 +55,7 @@
       image.alt = tile.dataset.title;
       title.textContent = tile.dataset.title;
       caption.textContent = tile.dataset.caption;
+      dialog.classList.toggle('individual-photo-dialog', tile.classList.contains('individual-photo-card'));
       dialog.showModal();
     }));
     dialog.querySelector('.close')?.addEventListener('click', () => dialog.close());

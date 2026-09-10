@@ -33,6 +33,35 @@ function updateFields() {
   program.disabled = speaking;
   form.elements.location.required = interest.value === 'Online / NRI consultation';
 }
+// Validate names in any writing system and formatted international phone numbers.
+const contactFields = [form.elements.name, form.elements.phone];
+function validateContactField(input) {
+  const value = input.value.trim();
+  let error = '';
+  if (input.name === 'name') {
+    if (!value) error = 'Enter your name.';
+    else if (!/\p{L}/u.test(value)) error = 'Enter a name containing letters, not just numbers or symbols.';
+  } else {
+    const digits = value.replace(/[^0-9]/g, '');
+    const international = value.startsWith('+');
+    const syntaxValid = /^\+?[0-9() .-]+$/.test(value);
+    const parsed = syntaxValid && window.libphonenumber?.parsePhoneNumberFromString(value, {defaultCountry: 'IN', extract: false});
+    if (!value) error = 'Enter your phone number.';
+    else if (!syntaxValid) error = 'Use digits with an optional leading +, spaces, brackets or hyphens. Letters are not allowed.';
+    else if (!international && digits.length !== 10) error = 'For India, enter exactly 10 digits. For another country, start with + and its country code.';
+    else if (!parsed || !parsed.isPossible() || (parsed.countryCallingCode === '91' && parsed.nationalNumber.length !== 10) || (international && parsed.number !== '+' + digits)) {
+      error = 'Check the country code and number length. Use 10 digits for India, or + followed by a country code and the complete number.';
+    }
+  }
+  input.setCustomValidity(error);
+  input.setAttribute('aria-invalid', String(Boolean(error)));
+  document.getElementById(input.name + '-error').textContent = error;
+}
+contactFields.forEach(input => {
+  input.addEventListener('blur', () => validateContactField(input));
+  input.addEventListener('input', () => validateContactField(input));
+  input.addEventListener('invalid', () => validateContactField(input));
+});
 let formRevision = 0;
 function invalidateEnquiry() { formRevision++; prepared.hidden = true; status.textContent = ''; }
 form.addEventListener('input', invalidateEnquiry);
@@ -58,6 +87,7 @@ if (form.dataset.endpoint) {
 }
 form.addEventListener('submit', async (event) => {
   event.preventDefault();
+  contactFields.forEach(validateContactField);
   if (!form.reportValidity()) return;
   const data = new FormData(form);
   const rows = [['Enquiry', data.get('interest')], ['Program', data.get('program')], ['Name', data.get('name')], ['Phone', data.get('phone')], ['Email', data.get('email')], ['Location / time zone', data.get('location')], ['Organisation', data.get('organisation')], ['Event', data.get('event')], ['Date', data.get('date')], ['Venue', data.get('venue')], ['Audience', data.get('audience')], ['Topic', data.get('topic')], ['Message', data.get('message')]];
