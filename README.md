@@ -1,5 +1,1 @@
-# Art of Eating public site
-
-Generated visitor-facing artifact for https://artofeating.neurabrix.co/.
-
-The private source, requirements, content ledgers, and governance evidence are maintained separately.
+Art of Eating production site. Generated from the private canonical source; this public repository contains only the allowlisted visitor artifact.
