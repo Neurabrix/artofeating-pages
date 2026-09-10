@@ -24,3 +24,30 @@
   .no-js .header #navigation { display: flex; position: static; order: 6; }
   .no-js .header .menu { display: none; }
 }
+
+/* Recognizable utilities: consistent geometry, accessible names and touch targets. */
+.header .menu { width: 44px; height: 44px; flex-shrink: 0; padding: 10px; }
+.header .menu .utility-icon,
+.utility-control .utility-icon,
+.quick-whatsapp svg {
+  display: block; width: 22px; height: 22px; margin: 0;
+  fill: none; stroke: currentColor; stroke-width: 1.8;
+  stroke-linecap: round; stroke-linejoin: round;
+}
+.header .menu .menu-close-mark { display: none; }
+.header .menu[aria-expanded="true"] .menu-open-mark { display: none; }
+.header .menu[aria-expanded="true"] .menu-close-mark { display: inline; }
+.gallery-page .utility-control,
+.story-controls .utility-control,
+.mobile-actions .utility-control {
+  display: inline-flex; align-items: center; justify-content: center;
+  width: 44px; min-width: 44px; height: 44px; min-height: 44px;
+  flex-shrink: 0; padding: 10px; text-decoration: none;
+}
+.story-controls .utility-control { color: var(--ink); border-radius: 8px; }
+.story-controls .utility-control:hover { background: #edf3e8; }
+.story-controls > div { flex-direction: row; gap: 8px; align-items: center; }
+.header .menu:focus-visible,
+.utility-control:focus-visible { outline: 3px solid currentColor; outline-offset: 3px; }
+#gallery-search::-webkit-search-cancel-button,
+#story-search::-webkit-search-cancel-button { -webkit-appearance: none; }

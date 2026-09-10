@@ -68,3 +68,10 @@
 }
 
 .legacy-experience-collection>summary::after,.legacy-experience-story>summary::after{content:none}
+
+/* Native details conveys state; show only its one decorative plus/minus. */
+.legacy-experience-collection[open]>summary::after,.legacy-experience-story[open]>summary::after{content:none}
+.legacy-experience-collection>summary>span:last-child,.legacy-experience-story>summary>span:last-child{font-size:0;transform:none;min-width:24px;text-align:center}
+.legacy-experience-collection>summary>span:last-child::before,.legacy-experience-story>summary>span:last-child::before{content:'+';font-size:24px}
+.legacy-experience-collection[open]>summary>span:last-child::before,.legacy-experience-story[open]>summary>span:last-child::before{content:'−'}
+.legacy-experience-collection[open]>summary>span:last-child,.legacy-experience-story[open]>summary>span:last-child{transform:none}

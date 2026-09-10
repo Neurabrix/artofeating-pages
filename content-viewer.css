@@ -65,3 +65,6 @@ body.viewer-open{position:fixed;overflow:hidden;width:100%}
 #viewer-title{margin-bottom:42px;font-weight:400;line-height:1.12}
 .reader-body{line-height:1.82}
 @media(max-width:600px){.viewer-toolbar{min-height:58px}.reader-settings{min-height:60px}.viewer-scroll{padding-top:34px}}
+
+#content-viewer [data-viewer-close]{display:inline-flex;align-items:center;justify-content:center;min-width:44px;min-height:44px;padding:10px}
+#content-viewer [data-viewer-close] .utility-icon{margin:0;width:20px;height:20px}

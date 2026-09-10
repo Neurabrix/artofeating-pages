@@ -82,3 +82,13 @@
   .story-controls label{margin-bottom:12px}
   .story-controls p{margin-top:14px}
 }
+
+/* Keep the original story artwork legible without stretching mobile rows. */
+@media(max-width:700px){
+ .story-preview-card{grid-template-columns:minmax(110px,35%) minmax(0,1fr);grid-template-rows:auto auto 1fr;gap:8px 14px;padding:14px;align-items:start}
+ .story-preview-card img{grid-row:1/4;width:100%;height:auto;min-height:0;aspect-ratio:1;object-fit:contain;object-position:center;align-self:start}
+ .story-preview-card h3,.story-preview-card p,.story-preview-card>span{margin:0;align-self:start}
+ .story-preview-card h3{font-size:19px;line-height:1.3}
+}
+/* Embedded wording is part of the retained artwork at tablet/desktop too. */
+.story-preview-card img{object-fit:contain;object-position:center}
