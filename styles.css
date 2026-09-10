@@ -56,6 +56,28 @@ body{font-size:15px}
 .speaking-summary .speaking-grid{align-items:center}
 .speaking-summary .speaking-grid>div:last-child>p{font-size:17px;line-height:1.75;max-width:620px}
 .home-page .library-preview-grid{grid-template-columns:minmax(0,520px)!important}
+
+/* Homepage discovery: concise care icons, six scannable programs, and
+   separate Watch and Read destinations instead of one mixed content wall. */
+.care-card .care-top svg{width:48px;height:48px;flex:0 0 48px;padding:10px;border-radius:50%;background:var(--green);stroke:var(--ink)}
+.care-card .care-top{gap:18px}.care-card .care-top span{max-width:17ch}
+.home-page .concise-programs .program{min-height:100%;padding:24px}
+.home-page .concise-programs .program h3{min-height:2.5em}
+.home-page .watch-preview{background:var(--paper)}
+.home-page .watch-preview .library-preview-grid{grid-template-columns:repeat(2,minmax(0,1fr))!important;gap:36px 24px}
+.home-page .watch-preview .legacy-library-video{min-width:0}
+.home-page .watch-preview .legacy-library-video h3{font-size:clamp(18px,2vw,25px);margin-top:8px}
+.home-page .watch-preview .legacy-library-meta{margin:10px 0 0;color:var(--muted)}
+.article-preview{background:var(--ink);color:var(--paper)}
+.article-preview .eyebrow,.article-preview .section-head>p{color:rgba(250,249,243,.7)}
+.article-preview-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:1px;background:rgba(250,249,243,.22);border:1px solid rgba(250,249,243,.22);border-radius:18px;overflow:hidden}
+.article-preview-card{display:flex;min-height:235px;flex-direction:column;padding:30px;color:var(--paper);background:var(--ink);text-decoration:none;transition:background .2s ease,transform .2s ease}
+.article-preview-card:hover,.article-preview-card:focus-visible{background:#24463b}
+.article-preview-card>span{font-size:11px;letter-spacing:.09em;text-transform:uppercase;color:rgba(250,249,243,.68)}
+.article-preview-card h3{font-size:clamp(22px,2.4vw,33px);margin:28px 0 38px;max-width:18ch}
+.article-preview-card p{margin:auto 0 0;font-size:13px;color:rgba(250,249,243,.8)}
+.article-preview .button.light{background:var(--paper);color:var(--ink);border-color:var(--paper)}
+@media(max-width:760px){.home-page .watch-preview .library-preview-grid,.article-preview-grid{grid-template-columns:1fr!important}.article-preview-card{min-height:200px}.home-page .concise-programs .program h3{min-height:0}}
 .mobile-actions{grid-template-columns:1fr 1.35fr}
 @media(max-width:900px){.concise-grid,.concise-programs{grid-template-columns:1fr}.concise-grid .care-card,.concise-programs .program{min-height:0}.community-feature{grid-template-columns:1fr}.community-feature figure{min-height:360px}}
 @media(max-width:760px){body{font-size:15px}.section{padding:52px 0}.section-head{margin-bottom:26px}.section-head h2,h2,.method h2,.speaking-grid h2,.faq-grid h2,.contact-copy h2{font-size:36px}.concise-grid .care-card{padding:24px}.community-feature figure{min-height:260px;aspect-ratio:1.25}.community-feature>div{padding:25px}.community-feature h3{font-size:30px}.programs-grid{grid-template-columns:1fr}.mobile-actions{grid-template-columns:1fr 1.35fr}}
