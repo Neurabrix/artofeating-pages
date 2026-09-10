@@ -78,6 +78,19 @@ document.querySelectorAll('[data-interest], [data-program]').forEach((link) => {
     setTimeout(() => interest.focus({ preventScroll: true }), 0);
   });
 });
+// Non-sensitive choices survive links from Care, Programs and Community.
+// Option values are rendered as text, never HTML; only listed programs are accepted.
+const enquiryParameters = new URLSearchParams(location.search);
+const requestedProgram = enquiryParameters.get('program');
+const requestedInterest = enquiryParameters.get('interest');
+if (requestedProgram && [...program.options].some(option => option.value === requestedProgram)) {
+  interest.value = 'Program enquiry';
+  program.value = requestedProgram;
+} else if (requestedInterest && requestedInterest.length <= 100 && !/[\u0000-\u001f]/.test(requestedInterest)) {
+  if (![...interest.options].some(option => option.value === requestedInterest)) interest.add(new Option(requestedInterest, requestedInterest));
+  interest.value = requestedInterest;
+}
+updateFields();
 let submissionKey = null;
 let submissionPayload = null;
 const startedAt = Date.now();
