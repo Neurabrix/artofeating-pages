@@ -345,20 +345,15 @@ footer{padding:48px 0 32px;border-top:0;background:var(--deep);color:#fff}
 .footer-nav a:hover,.footer-nav a:focus-visible{color:#f1d48f;text-decoration-color:#f1d48f}
 .footer-legal{grid-column:1/-1;margin:0;padding-top:22px;border-top:1px solid rgb(255 255 255 / .15);color:rgb(255 255 255 / .58);font-size:10px;line-height:1.65;max-width:none}
 .footer-brand:focus-visible,.footer-nav a:focus-visible{border-radius:4px;outline:2px solid var(--gold);outline-offset:4px}
-.site-credit-panel{border-top:1px solid rgb(23 59 52 / .12);background:#f1e6cf;color:var(--deep);padding:22px 0}
-.site-credit-panel-inner{display:grid;grid-template-columns:minmax(220px,.7fr) minmax(420px,1fr);align-items:center;gap:24px 56px}
-.site-credit-intro{display:grid;gap:5px}
-.site-credit-intro>span{color:#566864;font-size:9px;font-weight:800;letter-spacing:.16em;text-transform:uppercase}
-.site-credit-intro p{margin:0;color:#52635f;font-size:11px;line-height:1.55}
-.site-credit-card{display:flex;align-items:center;justify-content:space-between;gap:20px;min-width:0;padding:14px 14px 14px 18px;border:1px solid rgb(23 59 52 / .16);border-radius:14px;background:rgb(255 253 248 / .78);box-shadow:0 10px 26px rgb(23 59 52 / .07)}
-.site-credit-brand{display:grid;gap:2px;min-width:0}
-.site-credit-brand strong{font-family:Georgia,serif;font-size:21px;font-weight:600;letter-spacing:-.025em}
-.site-credit-brand small{color:#566864;font-size:9px;font-weight:750;letter-spacing:.09em;text-transform:uppercase}
-.site-credit-actions{display:flex;align-items:center;gap:8px;flex:none}
-.site-credit-contact,.site-credit{display:inline-flex;align-items:center;justify-content:center;min-height:36px;padding:9px 11px;border:1px solid rgb(23 59 52 / .22);border-radius:9px;background:#fffdf8;color:var(--deep);font-size:10px;font-weight:800;line-height:1;text-decoration:none;white-space:nowrap;transition:transform .18s ease,border-color .18s ease,background .18s ease,box-shadow .18s ease}
-.site-credit-action{border-color:var(--deep);background:var(--deep);color:#fff;letter-spacing:.01em}
-.site-credit-contact:hover,.site-credit:hover{transform:translateY(-1px);border-color:rgb(23 59 52 / .42);box-shadow:0 5px 12px rgb(23 59 52 / .1)}
-.site-credit-action:hover{background:#244b43;color:#fff}
+.site-credit-panel{border-top:1px solid rgb(23 59 52 / .12);background:#f1e6cf;color:var(--deep);padding:8px 0}
+.site-credit-panel-inner{display:flex;align-items:center;justify-content:space-between;gap:18px;min-height:30px}
+.site-credit-identity{display:flex;align-items:baseline;gap:9px;margin:0;min-width:0;color:var(--deep);font-size:11px;white-space:nowrap}
+.site-credit-label{color:#566864;font-size:8px;font-weight:700;letter-spacing:.13em;text-transform:uppercase}
+.site-credit-identity strong{font-size:12px;font-weight:750;letter-spacing:.01em}
+.site-credit-actions{display:flex;align-items:center;justify-content:flex-end;gap:12px;min-width:0}
+.site-credit-contact,.site-credit{display:inline-flex;align-items:center;min-height:28px;color:#385750;font-size:10px;font-weight:700;line-height:1;text-decoration-color:rgb(56 87 80 / .35);text-underline-offset:3px;white-space:nowrap;transition:color .18s ease,text-decoration-color .18s ease}
+.site-credit-actions a+a{padding-left:12px;border-left:1px solid rgb(23 59 52 / .18)}
+.site-credit-contact:hover,.site-credit:hover{color:var(--deep);text-decoration-color:var(--deep)}
 .site-credit-contact:focus-visible,.site-credit:focus-visible{outline:3px solid var(--gold);outline-offset:3px}
 
 @media(max-width:760px){
@@ -376,14 +371,13 @@ footer{padding:48px 0 32px;border-top:0;background:var(--deep);color:#fff}
   .footer-brand-copy span{max-width:230px}
   .footer-inner .footer-nav{justify-content:flex-start;gap:12px 22px;font-size:11px}
   .footer-legal{grid-column:auto;padding-top:20px}
-  .site-credit-panel{padding:20px 0 calc(94px + env(safe-area-inset-bottom))}
-  .site-credit-panel-inner{grid-template-columns:1fr;gap:14px}
-  .site-credit-intro{gap:4px}
-  .site-credit-card{display:grid;padding:13px 13px 13px 16px;gap:12px}
-  .site-credit-actions{display:grid;grid-template-columns:auto auto 1fr;gap:8px}
-  .site-credit-brand strong{font-size:19px}
-  .site-credit-brand small{font-size:8px;letter-spacing:.07em}
-  .site-credit-contact,.site-credit-action{padding:10px 11px}
+  .site-credit-panel{margin-bottom:calc(72px + env(safe-area-inset-bottom));padding:7px 0}
+  .site-credit-panel-inner{gap:10px}
+  .site-credit-label{display:none}
+  .site-credit-identity strong{font-size:11px}
+  .site-credit-actions{gap:9px}
+  .site-credit-actions a+a{padding-left:9px}
+  .site-credit-contact,.site-credit{min-height:28px;font-size:9px}
 }
 
 /* Compact individual photo journal — use source crops at their natural size. */
