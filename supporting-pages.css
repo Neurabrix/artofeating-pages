@@ -9,7 +9,8 @@
 .practice-topics{display:flex;gap:12px;flex-wrap:wrap;padding-bottom:32px}.practice-topics a{border:1px solid var(--line);padding:12px 18px;border-radius:24px;font-size:13px}
 .practice-section{padding-top:32px;padding-bottom:24px;scroll-margin-top:100px}.practice-section h2{font-size:32px;margin:0 0 24px}.practice-section .legacy-profile{margin:14px 0}
 .supporting-next{padding-top:48px;padding-bottom:64px}.supporting-next h2{font-size:32px;margin-bottom:24px}
-.story-controls{padding:24px;margin:24px 0;background:#edf3e8;border-radius:16px}.story-controls label{display:block;font-size:14px;font-weight:700;margin-bottom:12px}.story-controls>div{display:flex;gap:18px;align-items:center}.story-controls input{min-width:0;width:100%;min-height:48px;padding:12px;border:1px solid #84977d;border-radius:8px;font:inherit;background:white;color:var(--ink)}.story-controls button{flex-shrink:0;min-height:44px;border:0;background:transparent;text-decoration:underline;font:inherit;cursor:pointer}.story-controls p{margin-bottom:0;font-size:13px}.story-pagination{padding:24px 0}
+.story-controls{padding:24px;margin:24px 0;background:#edf3e8;border-radius:16px}.story-controls label{display:block;font-size:14px;font-weight:700;margin-bottom:12px}.story-controls>div{display:flex;gap:18px;align-items:center}.story-controls input{min-width:0;width:100%;min-height:48px;padding:12px;border:1px solid #84977d;border-radius:8px;font:inherit;background:white;color:var(--ink)}.story-controls button{flex-shrink:0;min-height:44px;border:0;background:transparent;text-decoration:underline;font:inherit;cursor:pointer}.story-controls p{margin-bottom:0;font-size:13px}.story-pagination{padding:8px 0 24px}
+.collection-pagination{display:grid;grid-template-columns:minmax(108px,auto) 1fr minmax(108px,auto);gap:16px;align-items:center;margin:24px 0}.collection-pagination p{margin:0;text-align:center;color:var(--muted);font-size:14px}.collection-pagination button{min-height:46px;padding:10px 18px;border:1px solid rgb(23 58 48 / .28);border-radius:999px;background:var(--white);color:var(--ink);font:700 14px/1.2 inherit;cursor:pointer}.collection-pagination button:hover:not(:disabled){border-color:var(--ink);background:#edf3e8}.collection-pagination button:disabled{cursor:not-allowed;opacity:.42}.collection-pagination button:last-child{justify-self:end}
 .supporting-page [hidden]{display:none!important}.supporting-page .legacy-experiences{padding-top:40px}
 .supporting-page details{scroll-margin-top:110px}
 @media(max-width:700px){.story-preview-grid{grid-template-columns:1fr}.story-preview-card{display:grid;grid-template-columns:100px 1fr;padding:0 14px 14px 0;column-gap:14px}.story-preview-card img{grid-row:1/4;height:100%;min-height:148px}.story-preview-card h3,.story-preview-card p,.story-preview-card>span{margin:14px 0 0}.story-preview-card h3{font-size:19px}.supporting-page .header-inner>.button{display:none}.story-controls>div{align-items:stretch;flex-direction:column}.story-controls button{align-self:flex-start}}
@@ -93,6 +94,7 @@
 .stories-disclaimer{max-width:850px;margin:28px 0 0;color:var(--muted);font-size:13px;line-height:1.65}
 .client-stories-page #legacy-google-reviews{margin-bottom:clamp(58px,7vw,86px);border-bottom:1px solid var(--line)}
 .client-stories-page #legacy-google-reviews>summary{cursor:default}
+.client-stories-page #legacy-google-reviews .review-pagination{padding:0 0 30px}
 .story-collection .story-controls{margin:0;padding-top:26px}
 .story-collection .legacy-experience-list{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px 18px;padding:8px 0 24px}
 .story-collection .legacy-experience-story{border:1px solid var(--line);border-radius:12px;padding-inline:16px;background:var(--white)}
@@ -126,6 +128,7 @@
   .featured-story-card>img{height:160px}
   .featured-story-role{min-height:0}
   .story-collection .legacy-experience-list{grid-template-columns:1fr;gap:10px}
+  .collection-pagination{grid-template-columns:1fr 1fr;gap:10px}.collection-pagination p{grid-column:1/-1;grid-row:1}.collection-pagination button{width:100%;padding-inline:12px}.collection-pagination button:first-child{grid-column:1}.collection-pagination button:last-child{grid-column:2}
 }
 
 /* Keep the original story artwork legible without stretching mobile rows. */
