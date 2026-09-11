@@ -16,6 +16,14 @@
   const more = document.querySelector('#library-more');
   const items = [...document.querySelectorAll('.library-item')];
   const groups = [...document.querySelectorAll('.library-topic-group')];
+  const results = document.querySelector('#library-results');
+  const continuousReadFlow = document.querySelector('link[rel="canonical"][href$="/read/"]');
+  const flow = continuousReadFlow ? document.createElement('div') : null;
+  if (flow) {
+    flow.className = 'library-flow';
+    items.forEach(item => flow.appendChild(item));
+    results.appendChild(flow);
+  }
   const pageSize = 6;
   let limit = pageSize;
   let matching = [];
@@ -28,7 +36,7 @@
       && words.every(word => searchable.get(item).includes(word)));
     const visible = new Set(matching.slice(0, limit));
     items.forEach(item => { item.hidden = !visible.has(item); if (item.hidden && item.tagName === 'DETAILS') item.open = false; });
-    groups.forEach(group => { group.hidden = !items.some(item => visible.has(item) && group.contains(item)); });
+    groups.forEach(group => { group.hidden = flow || !items.some(item => visible.has(item) && group.contains(item)); });
     status.textContent = matching.length ? `Showing ${visible.size} of ${matching.length} results` : 'No matching results';
     document.querySelector('#library-empty').hidden = matching.length !== 0;
     more.hidden = limit >= matching.length;

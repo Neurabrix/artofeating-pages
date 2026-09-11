@@ -32,12 +32,16 @@
 .legacy-experience-table th,.legacy-experience-table td{text-align:left;padding:12px;border:1px solid #bdcbbf;vertical-align:top}
 .legacy-experience-table th{background:#e9eee5}
 .legacy-review-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:24px;padding-bottom:32px;align-items:start}
-.legacy-review-grid figure{margin:0;min-width:0;background:#fffdf9;padding:16px;border:1px solid #dce2d9}
-.legacy-review-grid img{display:block;width:100%;height:auto}
-.legacy-review-grid figcaption{font-size:14px;line-height:1.6;margin-top:12px}
-.legacy-review-transcript{margin-top:16px;border-top:1px solid #dce2d9}
-.legacy-review-transcript>summary{cursor:pointer;padding:16px 0;min-height:44px}
-.legacy-review-transcript blockquote{margin:0;border-left:3px solid #bdcbbf;padding-left:16px}
+.legacy-review-card{min-width:0;padding:28px;border:1px solid #dce2d9;border-radius:18px;background:#fffdf9;box-shadow:0 14px 38px rgb(23 58 48 / .07)}
+.legacy-review-source{margin:0 0 8px;color:#537064;font-size:12px;font-weight:800;letter-spacing:.12em;text-transform:uppercase}
+.legacy-review-card h3{margin:0;color:#173a30;font-size:25px;line-height:1.15}
+.legacy-review-text{margin:22px 0 0;padding-left:18px;border-left:3px solid #bdcbbf;color:#31443e;font-size:16px;line-height:1.72}
+.legacy-review-text p{margin:0}
+.legacy-review-evidence{margin-top:22px;padding-top:16px;border-top:1px solid #dce2d9}
+.legacy-review-evidence>summary{min-height:44px;padding:10px 0;cursor:pointer;color:#35584d;font-weight:750}
+.legacy-review-evidence figure{margin:12px 0 0;padding:0;background:transparent}
+.legacy-review-evidence img{display:block;width:100%;height:auto;border-radius:12px}
+.legacy-review-evidence figcaption{margin-top:10px;font-size:14px;line-height:1.6}
 .legacy-experience-audio{padding:24px 20px}
 .legacy-experience-audio video{display:block;width:100%;max-width:560px;height:auto}
 .legacy-experiences :focus-visible{outline:3px solid #8b591e;outline-offset:5px}
@@ -58,8 +62,6 @@
 .legacy-experience-story{padding-inline:0;border-color:var(--line)}
 .legacy-experience-story[open]{padding-inline:22px;background:var(--white);box-shadow:0 14px 38px rgb(23 58 48 / .06)}
 .legacy-review-grid{gap:30px}
-.legacy-review-grid figure{padding:0;border:0;background:transparent}
-.legacy-review-grid img{border-radius:16px;box-shadow:0 14px 38px rgb(23 58 48 / .07)}
 @media(max-width:760px){
   .legacy-experiences-intro{display:block;margin-bottom:38px}
   .legacy-experiences-intro h2{margin-bottom:22px}
