@@ -9,7 +9,7 @@
   const stories = [...document.querySelectorAll('.legacy-experience-story')];
   const search = document.querySelector('#story-search');
   const more = document.querySelector('#story-more');
-  const collection = document.querySelector('.legacy-experience-collection');
+  const collection = document.querySelector('#all-client-stories');
   const pageSize = 12;
   let limit = pageSize;
   let matches = stories;
@@ -39,14 +39,23 @@
     const controls = document.querySelector('.story-controls');
     controls.hidden = false;
     controls.addEventListener('submit', e => e.preventDefault());
-    search.addEventListener('input', () => {limit = pageSize; render();});
+    search.addEventListener('input', () => {collection.open = true; limit = pageSize; render();});
     controls.addEventListener('reset', e => {e.preventDefault(); search.value = ''; limit = pageSize; render(); search.focus();});
     more.addEventListener('click', () => {const next = matches[limit]; limit += pageSize; render(); next?.querySelector('summary').focus({preventScroll:true}); next?.scrollIntoView({block:'start'});});
-    if(collection) collection.open = true;
     render();
   }
   window.addEventListener('hashchange', reveal);
-  document.addEventListener('click', e => {const a=e.target.closest('a[href^="#"]'); if(a?.hash === location.hash) reveal();});
+  document.addEventListener('click', e => {
+    const storyLink = e.target.closest('[data-story-target]');
+    if(storyLink) {
+      e.preventDefault();
+      history.pushState(null, '', '#' + encodeURIComponent(storyLink.dataset.storyTarget));
+      reveal();
+      return;
+    }
+    const a=e.target.closest('a[href^="#"]');
+    if(a?.hash === location.hash) reveal();
+  });
   document.documentElement.classList.remove('no-js');
   reveal();
 })();
