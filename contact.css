@@ -81,44 +81,49 @@
 .contact-location__heading { display: flex; align-items: flex-start; justify-content: space-between; gap: 24px; margin-bottom: 18px; }
 .contact-location__heading .eyebrow { margin: 3px 0 0; white-space: nowrap; }
 .contact-section .address { margin: 0; font-size: 13px; line-height: 1.65; }
-.contact-section .map { position: relative; display: flex; flex: 1; flex-direction: column; margin-top: 0; }
-.contact-section .map iframe { display: block; flex: 1 1 240px; min-height: 240px; height: auto; border: 0; border-radius: 14px; background: #e3eadd; }
+.contact-section .map { display: flex; flex: 1; flex-direction: column; margin-top: 0; }
+.contact-section .map-embed { position: relative; flex: 1 1 240px; min-height: 240px; }
+.contact-section .map iframe { display: block; width: 100%; height: 100%; min-height: 240px; border: 0; border-radius: 14px; background: #e3eadd; }
 .contact-section .map-fallback {
   position: absolute;
   z-index: 2;
-  left: 12px;
-  bottom: 42px;
+  left: 50%;
+  top: 50%;
   display: flex;
+  flex-direction: column;
   align-items: center;
-  gap: 9px;
+  min-width: 200px;
   max-width: calc(100% - 24px);
-  padding: 9px 12px;
-  border: 1px solid rgba(21, 62, 52, .18);
-  border-radius: 10px;
-  background: rgba(255, 253, 247, .94);
-  box-shadow: 0 4px 16px rgba(21, 62, 52, .11);
+  transform: translate(-50%, -100%);
   color: #153e34;
   pointer-events: none;
 }
-.contact-section .map-fallback__icon {
-  display: grid;
-  flex: 0 0 34px;
-  width: 34px;
-  height: 34px;
-  place-items: center;
-  border: 1px solid #c8ddd3;
-  border-radius: 50%;
-  background: #e7f2ed;
-  color: #0b6b58;
+.contact-section .map-fallback__card {
+  display: flex;
+  align-items: center;
+  gap: 9px;
+  min-width: 200px;
+  padding: 7px 11px 8px 8px;
+  border: 2px solid #0b6b58;
+  border-radius: 14px;
+  background: rgba(255, 253, 247, .97);
+  box-shadow: 0 8px 24px rgba(21, 62, 52, .28), 0 0 0 5px rgba(255, 253, 247, .72);
 }
-.contact-section .map-fallback__icon svg {
-  width: 20px;
-  height: 20px;
-  fill: none;
-  stroke: currentColor;
-  stroke-linecap: round;
-  stroke-linejoin: round;
-  stroke-width: 1.8;
+.contact-section .map-fallback__card img {
+  display: block;
+  flex: 0 0 66px;
+  width: 66px;
+  height: auto;
+}
+.contact-section .map-fallback__tip {
+  width: 18px;
+  height: 18px;
+  margin-top: -10px;
+  border-right: 2px solid #0b6b58;
+  border-bottom: 2px solid #0b6b58;
+  background: #fffdf7;
+  box-shadow: 5px 5px 9px rgba(21, 62, 52, .16);
+  transform: rotate(45deg);
 }
 .contact-section .map-fallback strong,
 .contact-section .map-fallback small { display: block; }
@@ -133,7 +138,12 @@
   .contact-actions { grid-template-columns: 1fr; }
   .contact-location__heading { display: block; }
   .contact-location__heading .eyebrow { margin-bottom: 12px; }
-  .contact-section .map iframe { flex-basis: 210px; min-height: 210px; height: 210px; }
+  .contact-section .map-embed,
+  .contact-section .map iframe { min-height: 210px; height: 210px; }
+  .contact-section .map-embed { flex-basis: 210px; }
+  .contact-section .map-fallback,
+  .contact-section .map-fallback__card { min-width: 186px; }
+  .contact-section .map-fallback__card img { flex-basis: 58px; width: 58px; }
 }
 
 /* Shared enquiry dialog: one accessible interaction on every visitor page. */
