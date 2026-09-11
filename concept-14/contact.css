@@ -100,7 +100,26 @@
   color: #153e34;
   pointer-events: none;
 }
-.contact-section .map-fallback > span:first-child { font-size: 22px; line-height: 1; }
+.contact-section .map-fallback__icon {
+  display: grid;
+  flex: 0 0 34px;
+  width: 34px;
+  height: 34px;
+  place-items: center;
+  border: 1px solid #c8ddd3;
+  border-radius: 50%;
+  background: #e7f2ed;
+  color: #0b6b58;
+}
+.contact-section .map-fallback__icon svg {
+  width: 20px;
+  height: 20px;
+  fill: none;
+  stroke: currentColor;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  stroke-width: 1.8;
+}
 .contact-section .map-fallback strong,
 .contact-section .map-fallback small { display: block; }
 .contact-section .map-fallback strong { font-size: 12px; }
