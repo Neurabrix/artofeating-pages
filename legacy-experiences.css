@@ -33,15 +33,12 @@
 .legacy-experience-table th{background:#e9eee5}
 .legacy-review-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:24px;padding-bottom:32px;align-items:start}
 .legacy-review-card{min-width:0;padding:28px;border:1px solid #dce2d9;border-radius:18px;background:#fffdf9;box-shadow:0 14px 38px rgb(23 58 48 / .07)}
-.legacy-review-source{margin:0 0 8px;color:#537064;font-size:12px;font-weight:800;letter-spacing:.12em;text-transform:uppercase}
+.legacy-review-meta{display:flex;align-items:center;justify-content:space-between;gap:16px;margin-bottom:8px}
+.legacy-review-source{margin:0;color:#537064;font-size:12px;font-weight:800;letter-spacing:.12em;text-transform:uppercase}
+.legacy-review-rating{margin:0;color:#d67d00;font-size:18px;line-height:1;letter-spacing:.08em;white-space:nowrap}
 .legacy-review-card h3{margin:0;color:#173a30;font-size:25px;line-height:1.15}
 .legacy-review-text{margin:22px 0 0;padding-left:18px;border-left:3px solid #bdcbbf;color:#31443e;font-size:16px;line-height:1.72}
 .legacy-review-text p{margin:0}
-.legacy-review-evidence{margin-top:22px;padding-top:16px;border-top:1px solid #dce2d9}
-.legacy-review-evidence>summary{min-height:44px;padding:10px 0;cursor:pointer;color:#35584d;font-weight:750}
-.legacy-review-evidence figure{margin:12px 0 0;padding:0;background:transparent}
-.legacy-review-evidence img{display:block;width:100%;height:auto;border-radius:12px}
-.legacy-review-evidence figcaption{margin-top:10px;font-size:14px;line-height:1.6}
 .legacy-experience-audio{padding:24px 20px}
 .legacy-experience-audio video{display:block;width:100%;max-width:560px;height:auto}
 .legacy-experiences :focus-visible{outline:3px solid #8b591e;outline-offset:5px}
