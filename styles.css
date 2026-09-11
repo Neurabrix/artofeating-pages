@@ -345,7 +345,6 @@ input,select,textarea{background:#fffefb}
 footer{background:var(--deep);color:#fff}
 .footer-inner p{color:rgb(255 255 255 / .72)}
 .footer-inner a{color:#fff}
-.footer-inner img{filter:brightness(0) invert(1)}
 
 @media(max-width:760px){
   .header nav{background:rgb(255 253 248 / .98)}
