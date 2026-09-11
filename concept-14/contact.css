@@ -80,6 +80,31 @@
 .contact-location { display: flex; flex-direction: column; padding: clamp(20px, 3vw, 30px); border: 1px solid rgba(23, 58, 48, .14); border-radius: 20px; background: rgba(255, 253, 247, .84); box-shadow: 0 16px 36px rgba(23, 58, 48, .07); }
 .contact-location__heading { display: flex; align-items: flex-start; justify-content: space-between; gap: 24px; margin-bottom: 18px; }
 .contact-location__heading .eyebrow { margin: 3px 0 0; white-space: nowrap; }
+.contact-location__intro { flex: 0 0 auto; }
+.contact-directions {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  min-height: 44px;
+  margin-top: 11px;
+  padding: 7px 12px 7px 9px;
+  border: 1px solid rgba(23, 58, 48, .2);
+  border-radius: 999px;
+  color: var(--ink);
+  background: #fffdf7;
+  box-shadow: 0 4px 12px rgba(23, 58, 48, .08);
+  font-size: 12px;
+  font-weight: 700;
+  line-height: 1;
+  text-decoration: none;
+}
+.contact-directions:hover { border-color: #4285f4; background: #f8fbff; }
+.contact-directions:focus-visible { outline: 3px solid #4285f4; outline-offset: 3px; }
+.contact-directions .google-maps-icon { display: block; width: 26px; height: 26px; flex: 0 0 26px; }
+.contact-directions .map-red { fill: #ea4335; stroke: none; }
+.contact-directions .map-yellow { fill: #fbbc04; stroke: none; }
+.contact-directions .map-green { fill: #34a853; stroke: none; }
+.contact-directions .pin-center { fill: #fff; stroke: none; }
 .contact-section .address { margin: 0; font-size: 13px; line-height: 1.65; }
 .contact-section .map { display: flex; flex: 1; flex-direction: column; margin-top: 0; }
 .contact-section .map-embed { position: relative; flex: 1 1 240px; min-height: 240px; }
@@ -129,7 +154,6 @@
 .contact-section .map-fallback small { display: block; }
 .contact-section .map-fallback strong { font-size: 12px; }
 .contact-section .map-fallback small { margin-top: 1px; color: #536d66; font-size: 10px; }
-.contact-section .map a { display: inline-block; margin-top: 10px; font-size: 12px; font-weight: 700; }
 @media (max-width: 900px) {
   .contact-section .contact-grid { grid-template-columns: 1fr; gap: 32px; }
   .contact-section .contact-copy h2 { max-width: none; }
@@ -137,7 +161,7 @@
 @media (max-width: 420px) {
   .contact-actions { grid-template-columns: 1fr; }
   .contact-location__heading { display: block; }
-  .contact-location__heading .eyebrow { margin-bottom: 12px; }
+  .contact-location__intro { margin-bottom: 18px; }
   .contact-section .map-embed,
   .contact-section .map iframe { min-height: 210px; height: 210px; }
   .contact-section .map-embed { flex-basis: 210px; }
