@@ -9,7 +9,7 @@
   const programs = [
     '', 'One-month nutrition program', '100-day nutrition program',
     '100 days with Shiny', 'Sports nutrition program',
-    'Pregnancy nutrition program', 'Preconception program'
+    'Pregnancy nutrition program'
   ];
   const speakingInterests = new Set([
     'Speaking / keynote enquiry', 'Corporate Nutrition',
