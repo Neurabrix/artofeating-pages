@@ -39,8 +39,16 @@
 .legacy-review-card h3{margin:0;color:#173a30;font-size:25px;line-height:1.15}
 .legacy-review-text{margin:22px 0 0;padding-left:18px;border-left:3px solid #bdcbbf;color:#31443e;font-size:16px;line-height:1.72}
 .legacy-review-text p{margin:0}
-.legacy-experience-audio{padding:24px 20px}
-.legacy-experience-audio video{display:block;width:100%;max-width:560px;height:auto}
+.legacy-experience-audio{display:grid;grid-template-columns:minmax(220px,380px) minmax(260px,1fr);gap:clamp(28px,5vw,64px);align-items:center;margin:34px 0 10px;padding:clamp(24px,4vw,48px);border:1px solid #cbd7c8;border-radius:24px;background:linear-gradient(135deg,#edf3e8 0%,#fffdf9 72%);box-shadow:0 20px 52px rgb(23 58 48 / .10)}
+.legacy-experience-audio-visual{min-width:0}
+.legacy-experience-audio-cover{display:block;width:100%;height:auto;border-radius:18px;box-shadow:0 16px 38px rgb(23 58 48 / .14)}
+.legacy-experience-audio-content{min-width:0;max-width:560px}
+.legacy-experience-audio-content .eyebrow{margin:0 0 12px;color:#496c53}
+.legacy-experience-audio h3{max-width:490px;margin:0;font-family:Georgia,serif;font-size:clamp(28px,3.3vw,42px);font-weight:400;line-height:1.12;letter-spacing:-.035em;color:#173a30}
+.legacy-experience-audio-intro{max-width:500px;margin:18px 0 22px;color:#536557;font-size:15px}
+.legacy-experience-audio audio{display:block;width:100%;min-height:54px;accent-color:#173a30;filter:drop-shadow(0 8px 16px rgb(23 58 48 / .10))}
+.legacy-experience-audio-link{margin:15px 0 0;font-size:13px;font-weight:750}
+@media(max-width:760px){.legacy-experience-audio{grid-template-columns:1fr;gap:28px;padding:22px}.legacy-experience-audio-visual{max-width:420px;margin-inline:auto}.legacy-experience-audio-content{max-width:none}.legacy-experience-audio h3{font-size:clamp(28px,9vw,38px)}}
 .legacy-experiences :focus-visible{outline:3px solid #8b591e;outline-offset:5px}
 @media(max-width:640px){.legacy-experiences .wrap{padding-inline:20px}.legacy-experience-story{padding-inline:12px}.legacy-review-grid{grid-template-columns:1fr}.legacy-experience-collection summary strong{font-size:20px}.legacy-experience-story summary strong{font-size:17px}}
 @media(prefers-reduced-motion:reduce){.legacy-experiences *{transition:none!important}}
