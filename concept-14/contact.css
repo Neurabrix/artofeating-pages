@@ -59,7 +59,7 @@
 }
 .contact-section .contact-grid {
   grid-template-columns: minmax(0, .95fr) minmax(400px, 1.05fr);
-  align-items: center; gap: clamp(40px, 6vw, 80px);
+  align-items: stretch; gap: clamp(40px, 6vw, 80px);
 }
 .contact-section .contact-copy h2 { max-width: 12ch; margin-bottom: 0; font-size: clamp(38px, 4.5vw, 60px); }
 .contact-section .contact-copy .intro { max-width: 52ch; margin: 20px 0 24px; color: var(--muted); font-size: 16px; line-height: 1.7; }
@@ -77,12 +77,12 @@
 .contact-action strong, .contact-action small { display: block; overflow-wrap: anywhere; }
 .contact-action strong { font-size: 13px; }
 .contact-action small { margin-top: 2px; color: var(--muted); font-size: 11px; line-height: 1.35; }
-.contact-location { padding: clamp(20px, 3vw, 30px); border: 1px solid rgba(23, 58, 48, .14); border-radius: 20px; background: rgba(255, 253, 247, .84); box-shadow: 0 16px 36px rgba(23, 58, 48, .07); }
+.contact-location { display: flex; flex-direction: column; padding: clamp(20px, 3vw, 30px); border: 1px solid rgba(23, 58, 48, .14); border-radius: 20px; background: rgba(255, 253, 247, .84); box-shadow: 0 16px 36px rgba(23, 58, 48, .07); }
 .contact-location__heading { display: flex; align-items: flex-start; justify-content: space-between; gap: 24px; margin-bottom: 18px; }
 .contact-location__heading .eyebrow { margin: 3px 0 0; white-space: nowrap; }
 .contact-section .address { margin: 0; font-size: 13px; line-height: 1.65; }
-.contact-section .map { position: relative; margin-top: 0; }
-.contact-section .map iframe { display: block; height: 240px; border: 0; border-radius: 14px; background: #e3eadd; }
+.contact-section .map { position: relative; display: flex; flex: 1; flex-direction: column; margin-top: 0; }
+.contact-section .map iframe { display: block; flex: 1 1 240px; min-height: 240px; height: auto; border: 0; border-radius: 14px; background: #e3eadd; }
 .contact-section .map-fallback {
   position: absolute;
   z-index: 2;
@@ -114,7 +114,7 @@
   .contact-actions { grid-template-columns: 1fr; }
   .contact-location__heading { display: block; }
   .contact-location__heading .eyebrow { margin-bottom: 12px; }
-  .contact-section .map iframe { height: 210px; }
+  .contact-section .map iframe { flex-basis: 210px; min-height: 210px; height: 210px; }
 }
 
 /* Shared enquiry dialog: one accessible interaction on every visitor page. */
