@@ -14,7 +14,7 @@
   const format = document.querySelector('#library-format');
   const status = document.querySelector('#library-status');
   const more = document.querySelector('#library-more');
-  const items = [...document.querySelectorAll('.library-item')];
+  const items = [...document.querySelectorAll('#library-results .library-item')];
   const groups = [...document.querySelectorAll('.library-topic-group')];
   const results = document.querySelector('#library-results');
   const continuousReadFlow = document.querySelector('link[rel="canonical"][href$="/read/"]');
@@ -61,7 +61,7 @@
     if (format && oldCollections[url.hash]) { format.value = oldCollections[url.hash]; topic.value = 'all'; search.value = ''; }
     let target;
     try { target = document.getElementById(decodeURIComponent(url.hash.slice(1))); } catch (_) { /* Invalid fragment is harmless. */ }
-    if (target?.classList.contains('library-item')) {
+    if (items.includes(target)) {
       topic.value = target.dataset.topic; if (format) format.value = 'all'; search.value = '';
       const index = items.filter(item => item.dataset.topic === topic.value).indexOf(target);
       limit = Math.ceil((index + 1) / pageSize) * pageSize;

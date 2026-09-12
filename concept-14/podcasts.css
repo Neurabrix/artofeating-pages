@@ -1,0 +1,31 @@
+.podcast-section{padding-bottom:clamp(58px,7vw,94px)}
+.podcast-heading{display:flex;justify-content:space-between;align-items:flex-end;gap:24px;margin-bottom:18px}
+.podcast-heading h2{font-size:clamp(28px,3.5vw,36px);margin:0}
+.podcast-heading p{display:none}
+.podcast-heading>.text-link{display:inline-flex;align-items:center;min-height:44px;white-space:nowrap}
+.podcast-controls{display:grid;grid-template-columns:2fr 1fr 1fr auto;gap:18px;align-items:end;border-bottom:1px solid var(--line);padding-bottom:24px}
+.podcast-controls label{display:grid;gap:9px;font-size:12px;font-weight:700;color:var(--muted);min-width:0}
+.podcast-controls input,.podcast-controls select{width:100%;min-width:0;min-height:50px;padding:12px;border:1px solid rgb(23 58 48 / .28);border-radius:10px;background:var(--white);color:var(--ink);font:inherit;font-size:14px}
+.podcast-controls button{min-height:50px;background:none;border:0;cursor:pointer;font-size:13px}
+html:not(.no-js) .podcast-controls[hidden]{display:grid!important;visibility:hidden}
+#podcast-status{font-size:13px;color:var(--muted);margin:18px 0 24px}
+.podcast-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:clamp(24px,3vw,38px)}
+html:not(.no-js):not(.podcasts-ready) .podcast-card:nth-child(n+7){display:none}
+html:not(.no-js):not(.podcasts-ready) #podcast-more[hidden]{display:inline-flex!important;visibility:hidden}
+.podcast-card h3{font-size:20px;line-height:1.45;margin:10px 0}
+.podcast-series-link{margin-top:28px;font-size:14px}
+#videos{border-top:1px solid var(--line);padding-top:48px;scroll-margin-top:120px}
+@media(max-width:1000px){.podcast-controls{grid-template-columns:1fr 1fr}.podcast-grid{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media(max-width:960px){
+  .podcast-heading{gap:12px;margin-bottom:14px}
+  .podcast-heading h2{font-size:26px;margin:4px 0 0}
+  #podcast-status{margin:12px 0 18px}
+}
+@media(max-width:600px){
+  .podcast-controls{grid-template-columns:1fr 1fr;gap:10px;padding-bottom:12px}
+  .podcast-controls label:first-child{grid-column:1/-1}
+  .podcast-controls input,.podcast-controls select{min-height:44px;padding:9px 10px}
+  .podcast-controls button{grid-column:1/-1;justify-self:start;min-height:44px}
+  .podcast-grid{grid-template-columns:1fr}
+  .podcast-card h3{font-size:20px}
+}
