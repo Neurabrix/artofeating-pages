@@ -3,16 +3,16 @@
 
 /*.html
   Cache-Control: no-cache
-  Link: </static/manrope-v20-latin.a30ddcd349703aff.woff2>; rel=preload; as=font; type="font/woff2"; crossorigin
+  Link: </static/manrope-v20-latin.a30ddcd349703aff.woff2>; rel=preload; as=font; type="font/woff2"; crossorigin, </static/manrope-v20-latin-ext.3911b66d9f2e005a.woff2>; rel=preload; as=font; type="font/woff2"; crossorigin
 
 /
   Cache-Control: no-cache
-  Link: </static/manrope-v20-latin.a30ddcd349703aff.woff2>; rel=preload; as=font; type="font/woff2"; crossorigin
+  Link: </static/manrope-v20-latin.a30ddcd349703aff.woff2>; rel=preload; as=font; type="font/woff2"; crossorigin, </static/manrope-v20-latin-ext.3911b66d9f2e005a.woff2>; rel=preload; as=font; type="font/woff2"; crossorigin
 
 /:route/
   Cache-Control: no-cache
-  Link: </static/manrope-v20-latin.a30ddcd349703aff.woff2>; rel=preload; as=font; type="font/woff2"; crossorigin
+  Link: </static/manrope-v20-latin.a30ddcd349703aff.woff2>; rel=preload; as=font; type="font/woff2"; crossorigin, </static/manrope-v20-latin-ext.3911b66d9f2e005a.woff2>; rel=preload; as=font; type="font/woff2"; crossorigin
 
 /concept-14/:route/
   Cache-Control: no-cache
-  Link: </static/manrope-v20-latin.a30ddcd349703aff.woff2>; rel=preload; as=font; type="font/woff2"; crossorigin
+  Link: </static/manrope-v20-latin.a30ddcd349703aff.woff2>; rel=preload; as=font; type="font/woff2"; crossorigin, </static/manrope-v20-latin-ext.3911b66d9f2e005a.woff2>; rel=preload; as=font; type="font/woff2"; crossorigin
