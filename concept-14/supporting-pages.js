@@ -6,6 +6,7 @@
   nav.addEventListener('click', e => {if(e.target.closest('a')) close();});
   document.addEventListener('click', e => {if(!e.target.closest('.header')) close();});
   document.addEventListener('keydown', e => {if(e.key === 'Escape' && nav.classList.contains('open')) {close(); menu.focus();}});
+  if (document.querySelector('#stories-browser')) return;
   const stories = [...document.querySelectorAll('.legacy-experience-story')];
   const search = document.querySelector('#story-search');
   const collection = document.querySelector('#all-client-stories');
