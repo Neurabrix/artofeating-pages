@@ -13,7 +13,7 @@
 .legacy-profile-images img{width:100%;max-height:300px;object-fit:contain;border-radius:12px;background:var(--paper)}
 .legacy-profile-images figcaption{font-size:12px;font-weight:700;line-height:1.5;margin-top:10px}
 .team-profiles{margin-top:30px;border-top:1px solid var(--line)}
-.team-profile{display:grid;grid-template-columns:minmax(180px,240px) minmax(0,1fr);gap:clamp(24px,4vw,48px);align-items:start;padding:32px 0;border-bottom:1px solid var(--line)}
+.team-profile{display:grid;grid-template-columns:minmax(180px,240px) minmax(0,1fr);gap:clamp(24px,4vw,48px);align-items:start;padding:32px 0;border-bottom:1px solid var(--line);scroll-margin-top:110px}
 .team-profile figure{position:sticky;top:110px;margin:0}
 .team-profile figure>a{display:block}
 /* Reset intrinsic HTML height added by release optimization so the frame stays 4:5. */
