@@ -35,11 +35,13 @@ jobs:
           check_https() {
             local url="$1"
             local output_file="$2"
+            local headers_file="${output_file}.headers"
             local result status final_url
 
             result="$(curl --silent --show-error --location \
               --retry 3 --retry-delay 2 --retry-all-errors \
               --connect-timeout 10 --max-time 30 \
+              --dump-header "$headers_file" \
               --output "$output_file" \
               --write-out '%{http_code} %{url_effective} %{remote_ip} %{time_total}' \
               "$url")"
@@ -51,6 +53,7 @@ jobs:
             [[ "$status" == "200" ]]
             [[ "$final_url" == https://* ]]
             grep -Eiq 'Art[[:space:]]+of[[:space:]]+Eating' "$output_file"
+            grep -Eiq '^strict-transport-security:[[:space:]]*max-age=' "$headers_file"
           }
 
           check_certificate() {
