@@ -329,12 +329,14 @@ h3{line-height:1.2}
 }
 
 /* Compact, persistent links to Shiny's public channels and clinic location. */
+.header-quick-actions,
 .header-socials{
   display:flex;
   flex:none;
   align-items:center;
   gap:6px;
 }
+.header-quick-actions a,
 .header-socials a{
   display:inline-flex;
   width:34px;
@@ -349,12 +351,15 @@ h3{line-height:1.2}
   text-decoration:none;
   transition:background .18s ease,border-color .18s ease,transform .18s ease;
 }
+.header-quick-actions a:hover,
+.header-quick-actions a:focus-visible,
 .header-socials a:hover,
 .header-socials a:focus-visible{
   border-color:var(--primary);
   background:var(--cream);
   transform:translateY(-1px);
 }
+.header-quick-actions svg,
 .header-socials svg{
   width:17px;
   height:17px;
@@ -364,8 +369,10 @@ h3{line-height:1.2}
   stroke-linecap:round;
   stroke-linejoin:round;
 }
-.header-socials .social-instagram{color:#c13584}
-.header-socials .social-instagram svg{stroke:url(#instagram-gradient)}
+.header-quick-actions .contact-phone{color:#2563a6}
+.header-quick-actions .contact-whatsapp{color:#128c45}
+.header-quick-actions .social-instagram{color:#c13584}
+.header-quick-actions .social-instagram svg{stroke:url(#instagram-gradient)}
 .header-socials .social-youtube{color:#f00}
 .header-socials .social-youtube .video-mark{fill:currentColor;stroke:none}
 .header-socials .social-youtube .play-mark{fill:#fff;stroke:none}
@@ -377,23 +384,30 @@ h3{line-height:1.2}
 .header-socials .social-maps .map-green{fill:#34a853;stroke:none}
 
 @media(max-width:1120px) and (min-width:761px){
+  .header-quick-actions,
   .header-socials{gap:4px}
+  .header-quick-actions a,
   .header-socials a{width:31px;height:31px}
+  .header-quick-actions svg,
   .header-socials svg{width:16px;height:16px}
 }
 
 @media(max-width:760px){
   .header-inner{justify-content:flex-start;gap:8px}
   .header .brand{order:1}
-  .header-socials{order:2;margin-left:auto;gap:4px}
-  .header-socials a{width:32px;height:32px}
+  .header-quick-actions{order:2;margin-left:auto}
+  .header-quick-actions{gap:4px}
+  .header-quick-actions a{width:44px;height:44px}
+  .header-quick-actions svg{width:20px;height:20px}
   .header .menu{order:3;margin-left:2px}
   .header #navigation{order:4}
+  .header #navigation>.header-socials{width:100%;justify-content:center;gap:10px;margin-top:8px}
+  .header #navigation>.header-socials a{width:44px;height:44px}
+  .header #navigation>.header-socials svg{width:20px;height:20px}
 }
 
 @media(max-width:380px){
-  .header-socials a{width:30px;height:30px}
-  .header-socials svg{width:15px;height:15px}
+  .header-quick-actions{gap:3px}
   .header .menu{padding-inline:12px}
 }
 

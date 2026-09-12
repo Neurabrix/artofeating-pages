@@ -21,7 +21,8 @@ html { scroll-padding-top: calc(var(--site-header-height, 152px) + 12px); }
 @media (max-width: 960px) {
   .header .header-inner { justify-content: space-between; }
   .header .brand { order: 1; }
-  .header .menu { display: block; order: 2; margin-left: auto; min-height: 44px; }
+  .header .header-quick-actions { order: 2; margin-left: auto; }
+  .header .menu { display: block; order: 3; margin-left: 2px; min-height: 44px; }
   .header #navigation {
     display: none; position: absolute; inset: 100% 0 auto;
     flex-wrap: wrap; gap: 4px; padding: 10px 18px 18px;
@@ -230,4 +231,10 @@ body.enquiry-modal-open { overflow: hidden; }
 @media (max-width: 960px) {
   .header #navigation .header-socials { flex: 0 0 100%; margin-top: 8px; }
   .header #navigation .header-socials a { flex: 0 0 44px; padding: 10px; }
+}
+
+@media (max-width: 380px) {
+  .header .header-inner { gap: 4px; }
+  .header .brand img { width: 72px; }
+  .header .menu { margin-left: 0; }
 }
