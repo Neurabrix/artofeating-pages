@@ -1,4 +1,27 @@
 (() => {
+  // Resolve relative to this script so root, clean routes, and concept previews agree.
+  const phoneParserUrl = new URL('../assets/vendor/libphonenumber-min-1.13.13.js', document.currentScript.src).href;
+  let phoneParserPromise;
+  function loadPhoneParser() {
+    if (window.libphonenumber) return Promise.resolve();
+    if (phoneParserPromise) return phoneParserPromise;
+    phoneParserPromise = new Promise((resolve, reject) => {
+      const script = document.createElement('script');
+      script.src = phoneParserUrl;
+      script.async = true;
+      const timeout = setTimeout(() => finish(new Error('Phone validation timed out')), 10000);
+      function finish(error) {
+        clearTimeout(timeout);
+        script.onload = script.onerror = null;
+        if (error) { script.remove(); phoneParserPromise = null; reject(error); }
+        else resolve();
+      }
+      script.onload = () => finish(window.libphonenumber ? null : new Error('Phone validation unavailable'));
+      script.onerror = () => finish(new Error('Phone validation unavailable'));
+      document.head.append(script);
+    });
+    return phoneParserPromise;
+  }
   const endpoint = 'https://aoe-enquiries-thgyrefe4a-el.a.run.app/api/enquiries';
   const interests = [
     ['General consultation', 'General Consultation'],
@@ -101,6 +124,12 @@
       else if ((!value.startsWith('+') || value.startsWith('+91')) && digits.slice(value.startsWith('+91') ? 2 : 0).length !== 10) error = 'For India, enter exactly 10 digits.';
       else {
         const parser = window.libphonenumber && window.libphonenumber.parsePhoneNumberFromString;
+        if (!parser) {
+          input.setCustomValidity('Phone validation is loading. Please try again in a moment.');
+          input.setAttribute('aria-invalid', 'false');
+          dialog.querySelector('#enquiry-phone-error').textContent = '';
+          return;
+        }
         let number;
         try {
           number = parser && parser(value, value.startsWith('+') ? undefined : 'IN');
@@ -151,6 +180,12 @@
     submissionPayload = null;
     setSelection(requestedInterest, requestedProgram);
     if (!dialog.open) dialog.showModal();
+    loadPhoneParser().then(() => {
+      if (form.elements.phone.value) validateContact(form.elements.phone);
+    }).catch(() => {
+      status.textContent = 'Phone validation could not load. Please retry, or contact the team on WhatsApp.';
+      fallback.hidden = false;
+    });
     document.body.classList.add('enquiry-modal-open');
     requestAnimationFrame(() => interest.focus({preventScroll: true}));
   }
@@ -194,6 +229,17 @@
   form.addEventListener('input', () => { status.textContent = ''; fallback.hidden = true; submissionKey = null; submissionPayload = null; });
   form.addEventListener('submit', async event => {
     event.preventDefault();
+    if (submit.disabled) return;
+    submit.disabled = true;
+    try {
+      await loadPhoneParser();
+    } catch (_) {
+      status.textContent = 'Phone validation could not load. Please retry, or contact the team on WhatsApp.';
+      fallback.hidden = false;
+      return;
+    } finally {
+      submit.disabled = false;
+    }
     validateContact(form.elements.name);
     validateContact(form.elements.phone);
     if (!form.reportValidity()) return;
