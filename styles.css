@@ -338,7 +338,7 @@ footer{padding:48px 0 32px;border-top:0;background:var(--deep);color:#fff}
 .footer-brand{display:inline-flex;flex:none;border-radius:8px}
 .footer-inner .footer-brand img{width:82px;height:auto;display:block;object-fit:contain}
 .footer-brand-copy{display:grid;gap:5px;min-width:0}
-.footer-brand-copy strong{font-family:Georgia,serif;font-size:19px;font-weight:500;letter-spacing:-.015em}
+.footer-brand-copy strong{font-family:var(--font-site,Manrope,Arial,sans-serif);font-size:19px;font-weight:700;letter-spacing:-.015em}
 .footer-brand-copy span{max-width:330px;color:rgb(255 255 255 / .7);font-size:11px;line-height:1.6}
 .footer-inner .footer-nav{display:flex;justify-content:flex-end;gap:10px 24px;flex-wrap:wrap;font-size:11px}
 .footer-nav a{color:#fff;white-space:nowrap;text-decoration-color:rgb(255 255 255 / .32);text-underline-offset:4px;transition:color .18s ease,text-decoration-color .18s ease}

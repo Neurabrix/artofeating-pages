@@ -675,7 +675,8 @@ main h4{line-height:1.3;letter-spacing:-.015em}
 .speaking-summary .speaking-grid h2{max-width:16ch}
 .community .event-photo.individual-event-photo{aspect-ratio:auto}
 .event-photo.individual-event-photo img{position:static;width:100%;max-width:100%;height:auto;max-height:360px;object-fit:contain;left:auto;top:auto}
-.event-symbol{font-size:clamp(64px,7vw,96px);min-height:0;padding:24px}
+.event-card.secondary{justify-content:flex-start}
+.event-symbol{flex:0 0 auto;font-size:clamp(64px,7vw,96px);min-height:clamp(136px,15vw,184px);padding:24px}
 .legacy-experiences{padding-block:var(--space-section)}
 .legacy-experiences-intro{gap:20px var(--space-grid);margin-bottom:28px}
 .practice-section{padding-block:32px 24px}
@@ -741,8 +742,6 @@ main h4{line-height:1.3;letter-spacing:-.015em}
 @media(min-width:761px) and (max-width:1050px){
   .programs-grid .program h3,.home-page .concise-programs .program h3{min-height:3.75em}
 }
-.care-page .supporting-hero,.detail-page:has(#programs) .supporting-hero{padding-block:24px;min-height:0}
-.care-page .supporting-hero h1,.detail-page:has(#programs) .supporting-hero h1{font-size:clamp(30px,3.2vw,44px);margin-block:0;line-height:1.15}
 .detail-page:has(#programs) .detail-topics{padding-bottom:16px}
 .detail-page #programs{padding-top:28px}
 .care-page #care .service-mini svg,.home-page #care .homepage-care-grid .service-mini svg{width:44px;height:44px;padding:5px;stroke-width:2.2;color:var(--primary);stroke:currentColor;flex:none}

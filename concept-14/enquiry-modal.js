@@ -1,10 +1,16 @@
 (() => {
   const endpoint = 'https://aoe-enquiries-thgyrefe4a-el.a.run.app/api/enquiries';
   const interests = [
-    'General consultation', 'Metabolic Health', 'Menopause Support',
-    'Sports & Fitness Nutrition', 'Online / NRI consultation',
-    'Speaking / keynote enquiry', 'Corporate Nutrition', 'School Health Talks',
-    'Community event enquiry', 'Program enquiry'
+    ['General consultation', 'General Consultation'],
+    ['Metabolic Health', 'Metabolic Health'],
+    ['Menopause Support', 'Menopause Support'],
+    ['Sports & Fitness Nutrition', 'Sports & Fitness Nutrition'],
+    ['Online / NRI consultation', 'Online / NRI Consultation'],
+    ['Speaking / keynote enquiry', 'Speaking / Keynote Enquiry'],
+    ['Corporate Nutrition', 'Corporate Nutrition'],
+    ['School Health Talks', 'School Health Talks'],
+    ['Community event enquiry', 'Community Event Enquiry'],
+    ['Program enquiry', 'Program Enquiry']
   ];
   const programs = [
     '', 'One-month nutrition program', '100-day nutrition program',
@@ -31,7 +37,7 @@
       <form class="enquiry enquiry-modal__form" id="enquiry-form" novalidate>
         <div class="form-trap" aria-hidden="true"><label>Leave this field empty<input name="website" tabindex="-1" autocomplete="off"></label></div>
         <div class="fields">
-          <label class="wide">I’m interested in<select name="interest" required>${interests.map(value => option(value)).join('')}</select></label>
+          <label class="wide">I’m interested in<select name="interest" required>${interests.map(([value, label]) => option(value, label)).join('')}</select></label>
           <label class="wide" data-program-field>Selected program<select name="program">${programs.map((value, index) => option(value, index ? value : 'Help me choose / no program selected')).join('')}</select></label>
           <label>Your name<input name="name" autocomplete="name" required maxlength="100" aria-describedby="enquiry-name-error"><span class="contact-error" id="enquiry-name-error"></span></label>
           <label>Phone number<input name="phone" type="tel" inputmode="tel" autocomplete="tel" required maxlength="30" aria-describedby="enquiry-phone-hint enquiry-phone-error"><span class="small" id="enquiry-phone-hint">India: 10 digits. Outside India: include + and the country code.</span><span class="contact-error" id="enquiry-phone-error"></span></label>
