@@ -1,8 +1,14 @@
 .gallery-page [hidden]{display:none!important}
-.gallery-page .gallery-hero{grid-template-areas:"back title" "eyebrow title" ". intro" ". total" ". collections" ". search"}
-.gallery-intro{grid-area:intro;max-width:650px;margin:12px 0 0;font-size:1.06rem;line-height:1.7}.gallery-total{grid-area:total;margin:4px 0 0;font-size:.875rem;color:#60736c}
-.gallery-collections{grid-area:collections;display:flex;flex-wrap:wrap;gap:9px;margin-top:16px}.gallery-collections a{display:inline-flex;gap:12px;align-items:center;min-height:44px;padding:9px 15px;border:1px solid #d9d8ce;border-radius:24px;text-decoration:none;font-size:.875rem;background:#fffef9}.gallery-collections a:hover{background:#edf2e8}.gallery-collections span{font-size:.75rem;opacity:.7}
-.gallery-search{grid-area:search;max-width:600px;margin-top:17px}.gallery-search label{display:block;font-weight:600;font-size:.875rem;margin-bottom:8px}.gallery-search-field{display:flex;gap:8px}.gallery-search input{width:100%;min-width:0;min-height:46px;padding:11px 14px;border:1px solid #c9cfc5;border-radius:8px;background:#fffef9;color:#163c33;font:inherit}.gallery-search button{min-height:44px;padding:8px 14px;border:1px solid #c9cfc5;border-radius:8px;font:inherit;color:#163c33;background:#fffef9;cursor:pointer}.gallery-search [role=status]{font-size:.82rem;min-height:1.4em;margin:6px 0 0;color:#60736c}
+/* One compact toolbar; labels and search wrap only when needed. */
+.gallery-toolbar{display:flex;flex-wrap:wrap;align-items:flex-start;gap:12px 20px;padding-block:24px}
+.gallery-collections{display:flex;flex-wrap:wrap;gap:8px;flex:1 1 720px;margin:0}
+.gallery-collections a{display:inline-flex;gap:8px;align-items:center;min-height:44px;padding:9px 12px;border:1px solid #d9d8ce;border-radius:24px;text-decoration:none;font-size:.875rem;background:#fffef9}
+.gallery-collections a:hover{background:#edf2e8}.gallery-collections span{font-size:.75rem;opacity:.7}
+.gallery-search{flex:1 1 220px;min-width:0;margin:0}
+.gallery-search-field{display:flex;gap:8px}.gallery-search input{width:100%;min-width:0;min-height:44px;padding:10px 12px;border:1px solid #c9cfc5;border-radius:8px;background:#fffef9;color:#163c33;font:inherit}
+.gallery-search button{min-height:44px;padding:8px 14px;border:1px solid #c9cfc5;border-radius:8px;font:inherit;color:#163c33;background:#fffef9;cursor:pointer}
+.gallery-search [role=status]{font-size:.82rem;margin:6px 0 0;color:#60736c}
+.gallery-search [role=status]:empty{margin:0}
 .gallery-group{padding:36px 0 44px;border-top:1px solid #d9d8ce;scroll-margin-top:145px}.gallery-group-heading{display:flex;align-items:baseline;justify-content:space-between;gap:15px;margin-bottom:22px}.gallery-group-heading h2{font-size:clamp(1.4rem,2.4vw,2rem);margin:0}.gallery-group-heading>span{white-space:nowrap;color:#60736c;font-size:.85rem}
 .polaroid-grid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:21px;align-items:start}.polaroid-card{margin:0;padding:10px;background:#fffefb;border:1px solid #dddcd2;border-radius:14px;overflow:hidden;box-shadow:0 3px 12px #163c3305;scroll-margin-top:145px}.polaroid-photo{display:block;border-radius:7px;text-decoration:none}.polaroid-frame{display:flex;align-items:center;justify-content:center;aspect-ratio:1;background:#f2f1e9;border-radius:7px;overflow:hidden}.polaroid-frame img{display:block;width:100%;height:100%;object-fit:contain;transition:filter .15s}.polaroid-photo:hover img{filter:brightness(.96)}.polaroid-card figcaption{padding:13px 3px 7px;font-size:.9rem;line-height:1.5;color:#25483e;overflow-wrap:anywhere}
 .gallery-empty{padding:35px 0}.gallery-end{display:flex;justify-content:space-between;flex-wrap:wrap;gap:22px;padding:10px 0 55px}

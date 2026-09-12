@@ -63,3 +63,12 @@
   .library-controls{grid-template-columns:1fr;padding-bottom:24px}
   .library-topic-items{gap:34px}
 }
+
+/* Reserve the filter row while deferred enhancement starts. Without this,
+   showing the form pushes the now-visible first results down after first paint. */
+html:not(.no-js) .library-page .library-controls[hidden] {
+  display: grid !important;
+  visibility: hidden;
+}
+/* Topic disclosure margins must not move the results container at enhancement. */
+.library-page #library-results { display: flow-root; }

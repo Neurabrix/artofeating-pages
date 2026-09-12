@@ -1,0 +1,42 @@
+/* Subpages share one compact, visible name before controls or useful content. */
+h1.browse-page-title {
+  position: static; width: var(--concept-shell); height: auto; max-width: none;
+  padding: 0; margin: 0 auto 18px; overflow: visible;
+  clip-path: none; white-space: normal; border: 0;
+  font-size: 32px; line-height: 1.2; letter-spacing: -.035em;
+}
+.compact-page-intro { width: var(--concept-shell); margin: -6px auto 20px; color: var(--muted); font-size: 15px; line-height: 1.6; }
+.gallery-page .gallery-toolbar { width: var(--concept-shell); }
+.client-stories-page .supporting-hero { width: var(--concept-shell); }
+.gallery-toolbar { padding-block: 24px 18px; }
+.gallery-toolbar h1.browse-page-title { flex-basis: 100%; width: 100%; margin: 0 0 4px; }
+main:has(> h1.browse-page-title) > .section:first-of-type { padding-top: 0; }
+main:has(> h1.browse-page-title) > .practice-topics { padding-bottom: 10px; margin-bottom: 20px; }
+main:has(> h1.browse-page-title) > .detail-topics { padding-bottom: 10px; margin-bottom: 18px; }
+main:has(> h1.browse-page-title) .library-controls { padding-top: 0; }
+main:has(> h1.browse-page-title) #library-status { margin: 10px 0 16px; }
+main:has(> h1.browse-page-title) > #faq .faq-grid { display: block; }
+main:has(> h1.browse-page-title) > #faq .faq-list { max-width: 900px; }
+.compact-faq-contact { padding-top: 24px; }
+main:has(> h1.browse-page-title) > #approach > h2,
+.compact-section-title { font-size: 26px; line-height: 1.25; margin: 0 0 20px; }
+.client-stories-page .supporting-hero { padding-block: 24px 16px; }
+.client-stories-page .supporting-hero h1 { font-size: 32px; line-height: 1.2; margin: 0 0 8px; }
+.client-stories-page .supporting-hero > p { font-size: 15px; margin-top: 0; }
+.client-stories-page .stories-search label {
+  position: absolute; width: 1px; height: 1px; margin: -1px; padding: 0;
+  overflow: hidden; clip-path: inset(50%); white-space: nowrap;
+}
+.client-stories-page .stories-search { justify-content: flex-start; margin-bottom: 12px; }
+.client-stories-page .stories-search > div { width: min(600px, 100%); }
+.client-stories-page .stories-tabs { margin-bottom: 18px; }
+@media (max-width: 760px) {
+  h1.browse-page-title { font-size: 26px; margin-bottom: 16px; }
+  main:has(> h1.browse-page-title) { padding-top: 20px; }
+  .gallery-toolbar { padding-top: 20px; }
+  .compact-page-intro { font-size: 14px; margin-bottom: 16px; }
+  .client-stories-page .supporting-hero { padding-block: 20px 10px; }
+  .client-stories-page .supporting-hero h1 { font-size: 26px; }
+  .client-stories-page .supporting-hero > p { font-size: 14px; }
+  .client-stories-page .stories-tabs { margin-bottom: 14px; }
+}

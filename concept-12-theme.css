@@ -807,3 +807,22 @@ main h4{line-height:1.3;letter-spacing:-.015em}
 
 /* Keep the header consultation label and arrow on one line. */
 .header .button{flex-shrink:0;white-space:nowrap}
+
+/* Browsing pages lead with useful labels and content (NbxBugs 251).
+   Keep redundant control headings available to assistive technology. */
+.browse-page-title:not(h1){position:absolute!important;width:1px!important;height:1px!important;padding:0!important;margin:-1px!important;overflow:hidden!important;clip-path:inset(50%)!important;white-space:nowrap!important;border:0!important}
+main:has(> .browse-page-title){padding-top:24px}
+main:has(> .browse-page-title)>.detail-topics,
+main:has(> .browse-page-title)>.practice-topics{margin-bottom:24px}
+main:has(> .browse-page-title)>.detail-topics+.section,
+main:has(> .browse-page-title)>.practice-topics+.practice-section{padding-top:0}
+main:has(> .browse-page-title)>.library-browser .library-controls{padding-bottom:16px}
+main:has(> .browse-page-title) #library-status{margin:12px 0 20px}
+main:has(> .browse-page-title) .library-controls{grid-template-columns:minmax(0,2fr) minmax(0,1fr) minmax(0,1fr) auto}
+main:has(> .browse-page-title) .library-controls label:first-child{grid-column:auto}
+main:has(> .browse-page-title) .library-controls label{min-width:0}
+@media(max-width:760px){
+  main:has(> .browse-page-title) .library-controls{grid-template-columns:repeat(2,minmax(0,1fr));gap:12px}
+  main:has(> .browse-page-title) .library-controls label:first-child{grid-column:1/-1}
+  main:has(> .browse-page-title) .library-controls button{align-self:end;min-height:44px}
+}

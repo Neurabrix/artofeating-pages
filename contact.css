@@ -219,3 +219,15 @@ body.enquiry-modal-open { overflow: hidden; }
 @media (prefers-reduced-motion: reduce) {
   .enquiry-modal { scroll-behavior: auto; }
 }
+
+/* Keep the closed mobile shell to one row; menu opening reveals contact actions. */
+@media (max-width: 960px) {
+  .header .header-socials { display: none; }
+  .header:has(#navigation.open) .header-socials,
+  .no-js .header .header-socials { display: flex; }
+}
+
+@media (max-width: 960px) {
+  .header #navigation .header-socials { flex: 0 0 100%; margin-top: 8px; }
+  .header #navigation .header-socials a { flex: 0 0 44px; padding: 10px; }
+}
