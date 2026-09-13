@@ -76,9 +76,9 @@
           </div>
           <label class="wide">Anything you’d like us to know? <span class="small">Please leave out medical reports and sensitive health details.</span><textarea name="message" rows="3" maxlength="600"></textarea></label>
         </div>
-        <div class="enquiry-modal__actions"><button class="button" type="submit">Send my enquiry ↗</button><button class="text-link enquiry-modal__cancel" type="button">Cancel</button></div>
+        <div class="enquiry-modal__actions"><button class="button" type="submit">Send my enquiry <svg class="enquiry-arrow" viewBox="0 0 24 24" width="16" height="16" aria-hidden="true" focusable="false"><path d="M7 17 17 7M7 7h10v10"></path></svg></button><button class="text-link enquiry-modal__cancel" type="button">Cancel</button></div>
         <p class="enquiry-modal__status" role="status" aria-live="polite"></p>
-        <div class="enquiry-modal__fallback" hidden><p>You can retry without re-entering your details, or contact the team directly.</p><a href="https://wa.me/916381501165?text=Hello%2C%20I%20am%20interested%20in%20an%20Art%20of%20Eating%20nutrition%20consultation.%20Please%20share%20the%20details." target="_blank" rel="noopener">Continue on WhatsApp ↗</a></div>
+        <div class="enquiry-modal__fallback" hidden><p>You can retry without re-entering your details, or contact the team directly.</p><a href="https://wa.me/916381501165?text=Hello%2C%20I%20am%20interested%20in%20an%20Art%20of%20Eating%20nutrition%20consultation.%20Please%20share%20the%20details." target="_blank" rel="noopener">Continue on WhatsApp <svg class="enquiry-arrow" viewBox="0 0 24 24" width="16" height="16" aria-hidden="true" focusable="false"><path d="M7 17 17 7M7 7h10v10"></path></svg></a></div>
       </form>
       <div class="enquiry-modal__success" id="enquiry-success" hidden tabindex="-1"><h3>Thank you — your enquiry is saved.</h3><p data-success-message></p><button class="button enquiry-modal__done" type="button">Done</button></div>
     </div>`;

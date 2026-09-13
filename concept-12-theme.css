@@ -151,7 +151,7 @@ h3{line-height:1.2}
   border-radius:14px;
   background:#fffdf8;
 }
-.care-page #care .service-mini svg{
+.care-page #care .service-mini > svg{
   width:34px;
   height:34px;
   padding:7px;
@@ -184,7 +184,7 @@ h3{line-height:1.2}
   .care-page #care .care-services{grid-column:1/-1;margin-top:2px;padding-top:16px}
   .care-page #care .care-services .service-directory{grid-template-columns:repeat(2,minmax(0,1fr));gap:10px}
   .care-page #care .service-mini{min-height:165px;aspect-ratio:auto;padding:13px}
-  .care-page #care .service-mini svg{width:31px;height:31px;padding:6px}
+  .care-page #care .service-mini > svg{width:31px;height:31px;padding:6px}
   .care-page #care .service-mini h4{font-size:12px}
   .care-page #care .service-mini p{font-size:9.5px;line-height:1.4}
   .care-page #care .care-card>.text-link{grid-column:1/-1}
@@ -436,7 +436,7 @@ h3{line-height:1.2}
   box-shadow:0 16px 34px rgb(3 72 63 / .075);
   transform:translateY(-2px);
 }
-.home-page #care .homepage-care-grid .service-mini svg{
+.home-page #care .homepage-care-grid .service-mini > svg{
   width:40px;
   height:40px;
   flex:none;
@@ -487,7 +487,7 @@ h3{line-height:1.2}
 @media(max-width:760px){
   .home-page #care .homepage-care-grid{grid-template-columns:repeat(2,minmax(0,1fr));gap:10px}
   .home-page #care .homepage-care-grid .service-mini{min-height:218px;padding:14px;gap:10px;border-radius:14px}
-  .home-page #care .homepage-care-grid .service-mini svg{width:36px;height:36px;padding:7px}
+  .home-page #care .homepage-care-grid .service-mini > svg{width:36px;height:36px;padding:7px}
   .home-page #care .homepage-care-grid .service-mini h4{font-size:13px;line-height:1.25}
   .home-page #care .homepage-care-grid .service-mini p{margin:7px 0 12px;font-size:10px;line-height:1.42}
   .home-page #care .homepage-care-grid .service-mini a{font-size:10px}
@@ -758,7 +758,7 @@ main h4{line-height:1.3;letter-spacing:-.015em}
 }
 .detail-page:has(#programs) .detail-topics{padding-bottom:16px}
 .detail-page #programs{padding-top:28px}
-.care-page #care .service-mini svg,.home-page #care .homepage-care-grid .service-mini svg{width:44px;height:44px;padding:5px;stroke-width:2.2;color:var(--primary);stroke:currentColor;flex:none}
+.care-page #care .service-mini > svg,.home-page #care .homepage-care-grid .service-mini > svg{width:44px;height:44px;padding:5px;stroke-width:2.2;color:var(--primary);stroke:currentColor;flex:none}
 
 /* Shared utility geometry: retain visible labels for comparisons. */
 .utility-icon{display:inline-block;width:18px;height:18px;flex:0 0 18px;vertical-align:middle;fill:none;stroke:currentColor;stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round;margin-inline-end:6px}

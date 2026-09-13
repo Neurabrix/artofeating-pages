@@ -13,13 +13,33 @@ html { scroll-padding-top: calc(var(--site-header-height, 152px) + 12px); }
 .contact-error { display: block; color: #a12520; font-size: 14px; font-weight: 600; }
 .contact-error:empty { display: none; }
 .enquiry input[aria-invalid="true"] { border-color: #a12520; }
-/* Six comfortably sized actions need their own row before navigation collapses. */
-@media (max-width: 1400px) {
-  .header .header-inner { flex-wrap: wrap; gap: 8px 16px; padding-block: 10px; }
-  .header .header-socials { order: 5; flex-basis: 100%; justify-content: center; margin: 0; }
+/* Keep the two contact groups visually continuous; navigation takes spare room. */
+@media (min-width: 961px) {
+  .header .header-inner { justify-content: flex-start; column-gap: 6px; }
+  .header #navigation { flex: 1; justify-content: space-evenly; margin-inline: clamp(8px, 1.2vw, 18px); }
+  .header .header-socials { margin: 0; }
+  .header .button { margin-left: clamp(8px, 1vw, 16px); }
+}
+/* Budget one desktop row before switching to the existing phone menu. */
+@media (min-width: 961px) and (max-width: 1400px) {
+  .header .header-inner { flex-wrap: nowrap; gap: 6px; padding-block: 10px; }
+  .header #navigation { gap: 2px; }
+  .header #navigation > a { font-size: 13px; padding-inline: 7px; white-space: nowrap; }
+  .header .header-quick-actions,
+  .header .header-socials { gap: 6px; flex-wrap: nowrap; }
+  .header .header-quick-actions a,
+  .header .header-socials a { width: 34px; height: 34px; }
+  .header .header-socials svg { width: 18px; height: 18px; }
+}
+@media (min-width: 961px) and (max-width: 1200px) {
+  .header #navigation > a { font-size: 12px; padding-inline: 6px; }
+}
+@media (min-width: 961px) and (max-width: 1120px) {
+  .header .button { display: none; }
 }
 @media (max-width: 960px) {
-  .header .header-inner { justify-content: space-between; }
+  .header .header-inner { justify-content: space-between; flex-wrap: wrap; gap: 8px 16px; padding-block: 10px; }
+  .header .header-socials { order: 5; flex-basis: 100%; justify-content: center; margin: 0; }
   .header .brand { order: 1; }
   .header .header-quick-actions { order: 2; margin-left: auto; }
   .header .menu { display: block; order: 3; margin-left: 2px; min-height: 44px; }
@@ -56,6 +76,15 @@ html { scroll-padding-top: calc(var(--site-header-height, 152px) + 12px); }
   width: 44px; min-width: 44px; height: 44px; min-height: 44px;
   flex-shrink: 0; padding: 10px; text-decoration: none;
 }
+/* Use the available mobile column for a clear, branded WhatsApp action. */
+.mobile-actions .quick-whatsapp {
+  width: 100%; gap: 8px; padding: 8px 12px;
+  color: #087b39; background: #effbf2; border-color: #b9d8c3;
+  font-size: 12px; white-space: nowrap;
+}
+.mobile-actions .quick-whatsapp svg { width: 24px; height: 24px; flex: none; }
+.mobile-actions .quick-whatsapp .whatsapp-handset { fill: currentColor; stroke: none; }
+.mobile-actions .quick-whatsapp:hover { background: #e1f4e7; border-color: currentColor; }
 .story-controls .utility-control { color: var(--ink); border-radius: 8px; }
 .story-controls .utility-control:hover { background: #edf3e8; }
 .story-controls > div { flex-direction: row; gap: 8px; align-items: center; }

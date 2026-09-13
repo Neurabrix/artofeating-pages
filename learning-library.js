@@ -17,7 +17,7 @@
   const items = [...document.querySelectorAll('#library-results .library-item')];
   const groups = [...document.querySelectorAll('.library-topic-group')];
   const results = document.querySelector('#library-results');
-  const continuousReadFlow = document.querySelector('link[rel="canonical"][href$="/read/"]');
+  const continuousReadFlow = location.pathname.replace(/index\.html$/, '').endsWith('/read/');
   const flow = continuousReadFlow ? document.createElement('div') : null;
   if (flow) {
     flow.className = 'library-flow';
